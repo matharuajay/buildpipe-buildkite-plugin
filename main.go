@@ -32,9 +32,9 @@ func NewConfig(filename string) *Config {
 
 func getAffectedProjects(projects []Project, changedFiles []string) []Project {
 	affectedProjects := make([]Project, 0)
-	log.Debugf("affected projects: %s", affectedProjects)
+	log.Info("affected projects: %s", affectedProjects)
 	for _, project := range projects {
-		log.Debugf("changed files: %s", changedFiles)
+		log.Info("changed files: %s", changedFiles)
 		if project.checkAffected(changedFiles) {
 			affectedProjects = append(affectedProjects, project)
 		}
